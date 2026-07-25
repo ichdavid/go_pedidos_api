@@ -15,7 +15,8 @@ Construir um sistema capaz de:
 - **cliente**: ID, Name, Email, PasswordHash, CreatedAt.
 - **Produto**: id, nome, preço, estoque.
 - **Item de Pedido**: produto, preço no momento da compra, quantidade.
-- **Pedido**: id, cliente, itens, status (`PENDING`, `PAID`, `CANCELED`).
+- **Pedido**: id, cliente, itens, statuspedido
+- **statuspedido** (`PENDING`, `PAID`, `CANCELED`).
 
 ## 🔑 Regras principais
 - Cliente precisa ter nome.

@@ -1,4 +1,4 @@
-package main
+package model
 
 // Definição das constantes dos status do pedido.
 type StatusPedido string

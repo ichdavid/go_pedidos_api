@@ -1,4 +1,4 @@
-package main
+package model
 
 // Definição da entidade pedidos
 type Pedido struct {
