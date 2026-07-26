@@ -3,7 +3,7 @@ package service
 
 import "github.com/ichdavid/go_pedidos_api/model"
 
-type ClienteServiceInterface interface {
+type ClienteServiceI interface {
 	Create(c *model.Cliente) error
 	Get(id int) (model.Cliente, error)
 	GetAll() ([]model.Cliente, error)
@@ -11,7 +11,7 @@ type ClienteServiceInterface interface {
 	Delete(id int) error
 }
 
-type PedidoServiceInterface interface {
+type PedidoServiceI interface {
 	Create(c *model.Pedido) error
 	Get(id int) (model.Pedido, error)
 	GetAll() ([]model.Pedido, error)
@@ -19,7 +19,7 @@ type PedidoServiceInterface interface {
 	Delete(id int) error
 }
 
-type ProdutoServiceInterface interface {
+type ProdutoServiceI interface {
 	Create(c *model.Produto) error
 	Get(id int) (model.Produto, error)
 	GetAll() ([]model.Produto, error)

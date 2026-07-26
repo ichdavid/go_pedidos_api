@@ -4,6 +4,6 @@ package model
 type Pedido struct {
 	ID        int
 	ClienteID int
-	Item      []ItemPedido
+	Itens     []ItemPedido
 	Status    StatusPedido
 }

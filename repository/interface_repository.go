@@ -2,7 +2,7 @@ package repository
 
 import "github.com/ichdavid/go_pedidos_api/model"
 
-type ClienteRepositoryInterface interface {
+type ClienteRepositoryI interface {
 	Create(c model.Cliente)
 	Get(id int) (model.Cliente, bool)
 	GetAll() []model.Cliente
@@ -10,7 +10,7 @@ type ClienteRepositoryInterface interface {
 	Delete(id int)
 }
 
-type PedidoRepositoryInterface interface {
+type PedidoRepositoryI interface {
 	Create(c model.Pedido)
 	Get(id int) (model.Pedido, bool)
 	GetAll() []model.Pedido
@@ -18,7 +18,7 @@ type PedidoRepositoryInterface interface {
 	Delete(id int)
 }
 
-type ProdutoRepositoryInterface interface {
+type ProdutoRepositoryI interface {
 	Create(c model.Produto)
 	Get(id int) (model.Produto, bool)
 	GetAll() []model.Produto

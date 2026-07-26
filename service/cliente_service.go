@@ -1,8 +1,7 @@
 package service
 
 import (
-	"errors"
-
+	"github.com/ichdavid/go_pedidos_api/errors"
 	"github.com/ichdavid/go_pedidos_api/model"
 	"github.com/ichdavid/go_pedidos_api/repository"
 )
@@ -17,13 +16,13 @@ func NewClienteService(repo *repository.ClienteRepository) *ClienteService {
 
 func (cs *ClienteService) Create(c *model.Cliente) error {
 	if c.Nome == "" {
-		return errors.New("Obrigatorio o preenchimento do nome")
+		return errors.ErrNomeObrigatorio
 	}
 
 	_, ok := cs.repo.Get(c.ID)
 
 	if ok {
-		return errors.New("Usuario já cadastrado!")
+		return errors.ErrClienteJaCadastrado
 	}
 
 	cs.repo.Create(*c)
@@ -35,7 +34,7 @@ func (cs *ClienteService) Get(id int) (model.Cliente, error) {
 	cliente, ok := cs.repo.Get(id)
 
 	if !ok {
-		return model.Cliente{}, errors.New("Usuario não encontrado na base de dados!")
+		return model.Cliente{}, errors.ErrClienteNaoEncontrado
 	}
 
 	return cliente, nil
@@ -52,7 +51,7 @@ func (cs *ClienteService) Update(c *model.Cliente) error {
 	_, ok := cs.repo.Get(c.ID)
 
 	if !ok {
-		return errors.New("Usuario não encontrado na base de dados")
+		return errors.ErrClienteNaoEncontrado
 	}
 
 	cs.repo.Update(*c)
@@ -65,7 +64,7 @@ func (cs *ClienteService) Delete(id int) error {
 	_, ok := cs.repo.Get(id)
 
 	if !ok {
-		return errors.New("Usuario não encontrado na base de dados")
+		return errors.ErrClienteNaoEncontrado
 	}
 
 	cs.repo.Delete(id)
