@@ -24,8 +24,8 @@ func (cs *ProdutoService) Create(p *model.Produto) error {
 		return errors.ErrPrecoInvalido
 	}
 
-	if p.qtde < 1 {
-		return erros.ErrQuantidadeMinimaProduto
+	if p.Estoque < 1 {
+		return errors.ErrQuantidadeMinimaProduto
 	}
 
 	_, ok := cs.repo.Get(p.ID)

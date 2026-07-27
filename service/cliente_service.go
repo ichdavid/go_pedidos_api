@@ -4,6 +4,8 @@ import (
 	"github.com/ichdavid/go_pedidos_api/errors"
 	"github.com/ichdavid/go_pedidos_api/model"
 	"github.com/ichdavid/go_pedidos_api/repository"
+
+	"time"
 )
 
 type ClienteService struct {
@@ -24,6 +26,8 @@ func (cs *ClienteService) Create(c *model.Cliente) error {
 	if ok {
 		return errors.ErrClienteJaCadastrado
 	}
+
+	c.CreatedAt = time.Now()
 
 	cs.repo.Create(*c)
 
