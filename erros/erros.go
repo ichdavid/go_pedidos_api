@@ -1,4 +1,4 @@
-package gopedidosapi
+package erros
 
 import "errors"
 

@@ -7,10 +7,10 @@ import (
 )
 
 type ProdutoService struct {
-	repo *repository.ProdutoRepository
+	repo repository.ProdutoRepository
 }
 
-func NewProdutoService(repo *repository.ProdutoRepository) *ProdutoService {
+func NewProdutoService(repo repository.ProdutoRepository) *ProdutoService {
 	return &ProdutoService{repo: repo}
 }
 

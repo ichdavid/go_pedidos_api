@@ -7,10 +7,10 @@ import (
 )
 
 type PedidoService struct {
-	repo *repository.PedidoRepository
+	repo repository.PedidoRepository
 }
 
-func NewPedidoService(repo *repository.PedidoRepository) *PedidoService {
+func NewPedidoService(repo repository.PedidoRepository) *PedidoService {
 	return &PedidoService{repo: repo}
 }
 
